@@ -43,7 +43,7 @@ export const projects = [
     tags: ["Next.js", "TypeScript", "Stripe", "Prisma"],
     github: "https://github.com/rajanpantha",
     live: "#",
-    image: "/assets/project-placeholder.svg",
+    image: "/assets/project-ecommerce.svg",
   },
   {
     title: "Task Management App",
@@ -52,7 +52,7 @@ export const projects = [
     tags: ["React", "Node.js", "Socket.io", "MongoDB"],
     github: "https://github.com/rajanpantha",
     live: "#",
-    image: "/assets/project-placeholder.svg",
+    image: "/assets/project-taskmanager.svg",
   },
   {
     title: "AI Content Generator",
@@ -61,7 +61,7 @@ export const projects = [
     tags: ["Python", "OpenAI", "FastAPI", "React"],
     github: "https://github.com/rajanpantha",
     live: "#",
-    image: "/assets/project-placeholder.svg",
+    image: "/assets/project-aicontent.svg",
   },
   {
     title: "Portfolio Dashboard",
@@ -70,7 +70,7 @@ export const projects = [
     tags: ["Next.js", "D3.js", "PostgreSQL", "TailwindCSS"],
     github: "https://github.com/rajanpantha",
     live: "#",
-    image: "/assets/project-placeholder.svg",
+    image: "/assets/project-dashboard.svg",
   },
 ];
 
