@@ -72,7 +72,7 @@ export default function About() {
             ].map(({ value, label }) => (
               <div
                 key={label}
-                className="rounded-lg border border-border bg-bg-card p-4 text-center"
+                className="rounded-lg border border-border bg-bg-card/80 p-4 text-center"
               >
                 <div className="text-2xl font-bold text-primary">{value}</div>
                 <div className="text-xs text-text-muted">{label}</div>
@@ -97,7 +97,7 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.15, duration: 0.5 }}
               whileHover={{ x: 8 }}
-              className="group flex gap-4 rounded-xl border border-border bg-bg-card p-5 transition-all duration-300 hover:border-border-light hover:bg-bg-card-hover"
+              className="group flex gap-4 rounded-xl border border-border bg-bg-card/80 p-5 transition-all duration-300 hover:border-border-light hover:bg-bg-card-hover"
             >
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary/20">
                 {icon}

@@ -29,7 +29,7 @@ export default function Projects() {
               ease: "easeOut",
             }}
             whileHover={{ y: -6 }}
-            className="group overflow-hidden rounded-xl border border-border bg-bg-card transition-all duration-300 hover:border-border-light hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]"
+            className="group overflow-hidden rounded-xl border border-border bg-bg-card/80 transition-all duration-300 hover:border-border-light hover:shadow-[0_20px_50px_rgba(0,0,0,0.25)]"
           >
             {/* Project image */}
             <div className="relative h-48 overflow-hidden bg-bg-tertiary">

@@ -5,8 +5,8 @@ import { siteConfig } from "@/data/siteData";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border bg-bg-secondary px-6 py-12">
-      <div className="mx-auto max-w-[1200px]">
+    <footer className="border-t border-border bg-bg-secondary/50 px-6 py-12">
+      <div className="mx-auto max-w-[1100px]">
         <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
           {/* Logo */}
           <div>

@@ -19,7 +19,6 @@ export default function Hero() {
 
     setDisplayText((prev) => {
       if (!isDeleting && prev === currentRole) {
-        // Pause before deleting — schedule via timeout
         return prev;
       }
       if (isDeleting) {
@@ -54,16 +53,16 @@ export default function Hero() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.15, delayChildren: 0.3 },
+      transition: { staggerChildren: 0.12, delayChildren: 0.2 },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" as const },
+      transition: { duration: 0.5, ease: "easeOut" as const },
     },
   };
 
@@ -74,8 +73,9 @@ export default function Hero() {
     >
       {/* Background gradient orbs */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 h-96 w-96 rounded-full bg-primary/5 blur-[100px]" />
-        <div className="absolute right-1/4 bottom-1/4 h-96 w-96 rounded-full bg-primary-light/5 blur-[100px]" />
+        <div className="absolute top-1/4 left-1/4 h-[500px] w-[500px] rounded-full bg-primary/[0.04] blur-[120px]" />
+        <div className="absolute right-1/4 bottom-1/3 h-[400px] w-[400px] rounded-full bg-primary-light/[0.03] blur-[100px]" />
+        <div className="absolute top-1/2 left-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/[0.02] blur-[80px]" />
       </div>
 
       {/* Grid overlay */}
@@ -85,11 +85,11 @@ export default function Hero() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative z-10 mx-auto max-w-4xl text-center"
+        className="relative z-10 mx-auto max-w-3xl text-center"
       >
         {/* Greeting badge */}
         <motion.div variants={itemVariants} className="mb-8">
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-bg-secondary px-4 py-2 text-sm text-text-secondary">
+          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-bg-secondary/80 px-4 py-2 text-sm text-text-secondary backdrop-blur-sm">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
@@ -108,7 +108,7 @@ export default function Hero() {
         </motion.h1>
 
         {/* Typing role */}
-        <motion.div variants={itemVariants} className="mb-6 h-10">
+        <motion.div variants={itemVariants} className="mb-8 h-10">
           <span className="typing-cursor font-mono text-lg text-primary sm:text-xl md:text-2xl">
             {displayText}
           </span>
@@ -138,7 +138,7 @@ export default function Hero() {
         {/* Social links */}
         <motion.div
           variants={itemVariants}
-          className="flex items-center justify-center gap-4"
+          className="flex items-center justify-center gap-3"
         >
           {[
             { icon: <Github size={20} />, href: siteConfig.social.github, label: "GitHub" },
@@ -150,7 +150,7 @@ export default function Hero() {
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-lg border border-border p-3 text-text-muted transition-all duration-300 hover:border-primary hover:text-primary hover:shadow-[0_0_15px_rgba(108,99,255,0.2)]"
+              className="rounded-lg border border-border p-3 text-text-muted transition-all duration-300 hover:border-primary/40 hover:text-primary hover:shadow-[0_0_15px_rgba(108,99,255,0.15)]"
               whileHover={{ y: -2, scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               aria-label={label}

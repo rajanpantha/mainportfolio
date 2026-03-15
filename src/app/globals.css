@@ -7,13 +7,13 @@
   --color-bg-primary: #0A0A0F;
   --color-bg-secondary: #111118;
   --color-bg-tertiary: #1A1A24;
-  --color-bg-card: #16161E;
-  --color-bg-card-hover: #1E1E28;
-  --color-text-primary: #F5F5F7;
+  --color-bg-card: #13131B;
+  --color-bg-card-hover: #1A1A25;
+  --color-text-primary: #EDEDF0;
   --color-text-secondary: #A1A1AA;
   --color-text-muted: #71717A;
-  --color-border: #27272A;
-  --color-border-light: #3F3F46;
+  --color-border: #1E1E2A;
+  --color-border-light: #2D2D3D;
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", "Fira Code", monospace;
 }
@@ -50,7 +50,7 @@ body {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #6C63FF 0%, #8B83FF 50%, #B3AFFF 100%);
+  background: linear-gradient(135deg, #6C63FF 0%, #9B8AFF 50%, #C4B5FD 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -77,4 +77,31 @@ body {
   animation: blink 1s step-end infinite;
   color: var(--color-primary);
   font-weight: 100;
+}
+
+/* Noise texture for backgrounds */
+.noise-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Subtle divider between sections */
+.section-divider {
+  position: relative;
+}
+.section-divider::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 800px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-border-light), transparent);
 }
