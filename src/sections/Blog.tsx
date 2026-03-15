@@ -28,7 +28,7 @@ export default function Blog() {
               ease: "easeOut",
             }}
             whileHover={{ y: -6 }}
-            className="group flex flex-col rounded-xl border border-border bg-bg-card p-6 transition-all duration-300 hover:border-border-light hover:bg-bg-card-hover hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)]"
+            className="group flex flex-col rounded-xl border border-border bg-bg-card/80 p-6 transition-all duration-300 hover:border-border-light hover:bg-bg-card-hover hover:shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
           >
             {/* Meta info */}
             <div className="mb-4 flex items-center gap-4 text-xs text-text-muted">

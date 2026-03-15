@@ -53,13 +53,13 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 right-0 left-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "border-b border-border bg-bg-primary/80 backdrop-blur-xl"
+          ? "border-b border-border bg-bg-primary/70 backdrop-blur-xl shadow-[0_1px_20px_rgba(0,0,0,0.3)]"
           : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-6 sm:h-20">
+      <nav className="mx-auto flex h-16 max-w-[1100px] items-center justify-between px-6 sm:h-20">
         {/* Logo */}
         <motion.a
           href="#home"

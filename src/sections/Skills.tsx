@@ -64,7 +64,7 @@ export default function Skills() {
                       scale: 1.03,
                       backgroundColor: "rgba(108, 99, 255, 0.08)",
                     }}
-                    className="group flex items-center gap-3 rounded-lg border border-border bg-bg-card px-4 py-3 transition-all duration-200 hover:border-primary/30"
+                    className="group flex items-center gap-3 rounded-lg border border-border bg-bg-card/80 px-4 py-3 transition-all duration-200 hover:border-primary/30"
                   >
                     <span className="text-lg">
                       {skillIcons[skill.name] || "💻"}

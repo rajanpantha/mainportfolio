@@ -17,9 +17,9 @@ export default function SectionWrapper({
   return (
     <section
       id={id}
-      className={`relative py-24 px-6 ${className}`}
+      className={`section-divider relative py-24 px-6 sm:py-28 lg:py-32 ${className}`}
     >
-      <div className="mx-auto max-w-[1200px]">{children}</div>
+      <div className="mx-auto max-w-[1100px]">{children}</div>
     </section>
   );
 }
@@ -39,7 +39,7 @@ export function SectionHeading({
       transition={{ duration: 0.5, ease: "easeOut" }}
       className="mb-16 text-center"
     >
-      <h2 className="mb-4 text-3xl font-bold tracking-tight text-text-primary sm:text-4xl lg:text-5xl">
+      <h2 className="mb-4 text-3xl font-bold tracking-tight text-text-primary sm:text-4xl">
         {title}
       </h2>
       {subtitle && (
@@ -47,7 +47,7 @@ export function SectionHeading({
           {subtitle}
         </p>
       )}
-      <div className="mx-auto mt-6 h-1 w-16 rounded-full bg-primary" />
+      <div className="mx-auto mt-6 h-0.5 w-12 rounded-full bg-primary/60" />
     </motion.div>
   );
 }

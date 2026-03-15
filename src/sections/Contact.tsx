@@ -23,7 +23,7 @@ export default function Contact() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="mx-auto max-w-xl"
       >
-        <div className="rounded-2xl border border-border bg-bg-card p-8 sm:p-10">
+        <div className="rounded-2xl border border-border bg-bg-card/80 p-8 sm:p-10">
           <div className="mb-8 text-center">
             <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
               <Mail size={28} className="text-primary" />

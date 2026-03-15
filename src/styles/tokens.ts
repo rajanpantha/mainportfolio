@@ -25,20 +25,20 @@ export const colors = {
     primary: "#0A0A0F",
     secondary: "#111118",
     tertiary: "#1A1A24",
-    card: "#16161E",
-    cardHover: "#1E1E28",
+    card: "#13131B",
+    cardHover: "#1A1A25",
   },
   // Text
   text: {
-    primary: "#F5F5F7",
+    primary: "#EDEDF0",
     secondary: "#A1A1AA",
     muted: "#71717A",
     accent: "#6C63FF",
   },
   // Borders
   border: {
-    DEFAULT: "#27272A",
-    light: "#3F3F46",
+    DEFAULT: "#1E1E2A",
+    light: "#2D2D3D",
     accent: "#6C63FF",
   },
   // Status
