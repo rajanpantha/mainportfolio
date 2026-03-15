@@ -4,39 +4,51 @@ import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Twitter } from "lucide-react";
 import { siteConfig } from "@/data/siteData";
 import Button from "@/components/ui/Button";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 
 const roles = ["Full Stack Developer", "React Specialist", "UI/UX Enthusiast", "Open Source Contributor"];
 
 export default function Hero() {
-  const [roleIndex, setRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
+  const roleIndexRef = useRef(0);
+  const isDeletingRef = useRef(false);
+
+  const tick = useCallback(() => {
+    const currentRole = roles[roleIndexRef.current];
+    const isDeleting = isDeletingRef.current;
+
+    setDisplayText((prev) => {
+      if (!isDeleting && prev === currentRole) {
+        // Pause before deleting — schedule via timeout
+        return prev;
+      }
+      if (isDeleting) {
+        return currentRole.substring(0, prev.length - 1);
+      }
+      return currentRole.substring(0, prev.length + 1);
+    });
+  }, []);
 
   useEffect(() => {
-    const currentRole = roles[roleIndex];
+    const currentRole = roles[roleIndexRef.current];
+
     let timeout: NodeJS.Timeout;
 
-    if (!isDeleting && displayText === currentRole) {
-      timeout = setTimeout(() => setIsDeleting(true), 2000);
-    } else if (isDeleting && displayText === "") {
-      setIsDeleting(false);
-      setRoleIndex((prev) => (prev + 1) % roles.length);
+    if (!isDeletingRef.current && displayText === currentRole) {
+      timeout = setTimeout(() => {
+        isDeletingRef.current = true;
+        tick();
+      }, 2000);
+    } else if (isDeletingRef.current && displayText === "") {
+      isDeletingRef.current = false;
+      roleIndexRef.current = (roleIndexRef.current + 1) % roles.length;
+      timeout = setTimeout(tick, 80);
     } else {
-      timeout = setTimeout(
-        () => {
-          setDisplayText(
-            isDeleting
-              ? currentRole.substring(0, displayText.length - 1)
-              : currentRole.substring(0, displayText.length + 1)
-          );
-        },
-        isDeleting ? 30 : 80
-      );
+      timeout = setTimeout(tick, isDeletingRef.current ? 30 : 80);
     }
 
     return () => clearTimeout(timeout);
-  }, [displayText, isDeleting, roleIndex]);
+  }, [displayText, tick]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -97,9 +109,8 @@ export default function Hero() {
 
         {/* Typing role */}
         <motion.div variants={itemVariants} className="mb-6 h-10">
-          <span className="font-mono text-lg text-primary sm:text-xl md:text-2xl">
+          <span className="typing-cursor font-mono text-lg text-primary sm:text-xl md:text-2xl">
             {displayText}
-            <span className="animate-pulse text-primary">|</span>
           </span>
         </motion.div>
 
