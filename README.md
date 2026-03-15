@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rajan Pantha — Portfolio
+
+A modern, animated portfolio website built with **Next.js**, **React**, **TailwindCSS**, and **Framer Motion**.
+
+## Features
+
+- Dark theme with custom design tokens and CSS variables
+- Smooth scroll animations and hover effects (Framer Motion)
+- Responsive design (Desktop 1440px+, Laptop 1024px, Tablet 768px, Mobile 375px)
+- Typing animation in the hero section
+- Active section highlighting in the navbar
+- Animated mobile navigation menu
+- Contact form
+- Project cards with hover overlays
+- Blog post cards
+- Skills categorized by type
+- Performance optimized with lazy-loaded images
+
+## Tech Stack
+
+- [Next.js 16](https://nextjs.org/) — React framework
+- [React 19](https://react.dev/) — UI library
+- [TailwindCSS 4](https://tailwindcss.com/) — Utility-first CSS
+- [Framer Motion 12](https://www.framer.com/motion/) — Animations
+- [Lucide React](https://lucide.dev/) — Icons
+- [TypeScript](https://www.typescriptlang.org/) — Type safety
+
+## Project Structure
+
+```
+src/
+├── app/           # Next.js app router (layout, page, globals.css)
+├── components/    # Reusable components (Navbar, Footer)
+│   └── ui/        # UI primitives (Button, Card, SectionWrapper)
+├── sections/      # Page sections (Hero, About, Skills, Projects, Blog, Contact)
+├── data/          # Site content data (siteData.ts)
+├── hooks/         # Custom React hooks
+├── styles/        # Design tokens
+└── utils/         # Utility functions (cn)
+public/
+└── assets/        # Static assets (images, SVGs)
+```
 
 ## Getting Started
 
-First, run the development server:
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build for production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+### Start production server
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Deploy to Vercel
 
-## Deploy on Vercel
+1. Push the code to a GitHub repository
+2. Go to [vercel.com](https://vercel.com) and import the repository
+3. Vercel will automatically detect the Next.js framework
+4. Click **Deploy**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Or use the Vercel CLI:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npx vercel
+```
+
+## Customization
+
+Edit `src/data/siteData.ts` to update:
+- Personal information (name, description, email)
+- Social links (GitHub, LinkedIn, Twitter)
+- Skills and technologies
+- Projects
+- Blog posts
+- Navigation links
+
+Design tokens are in `src/app/globals.css` (CSS variables) and `src/styles/tokens.ts`.
